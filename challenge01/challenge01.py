@@ -17,3 +17,7 @@ for i in names:
     pets[i] = {"age": ages[name_index], "animal": animal[name_index]}
 
 pprint(pets)
+pprint(f"fluffy is a {pets['fluffy']['age']} year old {pets['fluffy']['animal']}")
+
+for i in pets:
+    print(i)
