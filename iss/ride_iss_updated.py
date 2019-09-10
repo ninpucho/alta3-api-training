@@ -27,22 +27,25 @@ def main():
 
     helmetson = json.loads(helmet.decode('utf-8'))
 
-    print("\n\nConverted python data")
-    print(helmetson)
+    # print(helmetson)
 
-    print('\n\nPeople in space: ', helmetson['number'])
     people = helmetson['people']
-    print(people)
+    # print(people)
+    print('\n\nPeople in space: ', helmetson['number'])
+    for person in people:
+        print(person["name"], "is on the", person["craft"])
 
     while True:
-        action = input("Do you wish to add another astronaut? (y/N): ")
+        action = input("\nDo you wish to add another astronaut? (y/N): ")
         if action.lower() != "y":
             break
         helmetson = add_astronaut(helmetson)
 
+    print("\n\nConverted python data")
+    print('\n\nPeople in space: ', helmetson['number'])
     for person in people:
         print(person["name"], "is on the", person["craft"])
-    print(f"Total: {helmetson['number']}")
+    # print(f"Total: {helmetson['number']}")
     # Buzz Aldrin
     # mark Watney
 
